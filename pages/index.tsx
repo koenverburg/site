@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import {Layout} from '../components/Layout'
 
+/* eslint-disable react/display-name */
 const link = (label: string, link: string) => () => {
   return (
-    <a href={link} target="_blank" className="underline font-semibold text-orange-500">{label}</a>
+    <a href={link} target="_blank" className="underline font-semibold text-orange-500" rel="noreferrer">{label}</a>
   ) 
 }
+/* eslint-enable react/display-name */
 
 const Bold = (props) => {
   return <span className="font-semibold text-blue-500">{props.children}</span>
