@@ -17,6 +17,8 @@ const serverSettings = {}
 // }
 
 const nextConfig = {
+  output: 'standalone',
+
   reactStrictMode: true,
   swcMinify: true,
 
