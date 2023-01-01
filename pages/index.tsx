@@ -47,7 +47,7 @@ const IndexPage = () => {
       </article>
 
       <article className="mb-4 text-center">
-        Want you Development Team to move to production multiple times a day instead once ever two weeks?
+        Do you want your Development Team to move to production multiple times a day instead once ever two weeks?
         <br />Book a <Call /> or DM me on <Twitter /> or <Instagram />
       </article>
 
