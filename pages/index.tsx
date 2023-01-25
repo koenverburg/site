@@ -20,8 +20,8 @@ const IndexPage = () => {
   const Adidas = link('Adidas', 'https://adidas.com')
   const AdidasCom = link('adidas.com', 'https://adidas.com')
 
-  const Twitter = link('Twitter', 'https://twitter.com/koenverburg')
-  const Call = link('call', 'https://appointments.lokiapp.live/consultant/WUJFxrwyO0MMZj6F9lEKOsVFtpx2')
+  // const Twitter = link('Twitter', 'https://twitter.com/koenverburg')
+  // const Call = link('call', 'https://appointments.lokiapp.live/consultant/WUJFxrwyO0MMZj6F9lEKOsVFtpx2')
 
   return (
     <Layout title="Conrad The Programmer">
@@ -33,7 +33,9 @@ const IndexPage = () => {
           src="/assets/new-avatar.jpg"
           className="rounded-full w-32 mb-4 mx-auto"
         />
+
         <h1 className="font-bold text-3xl tracking-tight">Koen Verburg</h1>
+
         <h2 className="text-gray-500">
           Software Engineer at <Adidas />
         </h2>
@@ -46,10 +48,12 @@ const IndexPage = () => {
         <br />At night I stream on <Twitch />, work on content for <Instagram /> or my <Blog />, or one of my SaaS projects. 
       </article>
 
+      {/*
       <article className="mb-4 text-center">
         Do you want your Development Team to move to production multiple times a day instead once ever two weeks?
         <br />Book a <Call /> or DM me on <Twitter /> or <Instagram />
       </article>
+      */}
 
     </Layout>
   )
