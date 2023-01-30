@@ -1,19 +1,17 @@
 import Image from 'next/image'
 import {Layout} from '../components/Layout'
 
-/* eslint-disable react/display-name */
-const link = (label: string, link: string) => () => {
+const link = (label: string, link: string) => (): JSX.Element => {
   return (
     <a href={link} target="_blank" className="underline font-semibold text-orange-500" rel="noreferrer">{label}</a>
   ) 
 }
-/* eslint-enable react/display-name */
 
-const Bold = (props) => {
+const Bold = (props: { children: React.ReactNode }) => {
   return <span className="font-semibold text-blue-500">{props.children}</span>
 }
 
-const IndexPage = () => {
+const Page = () => {
   const Twitch = link('Twitch', 'https://www.twitch.tv/conradtheprogrammer')
   const Instagram = link('Instagram', 'https://www.instagram.com/conradtheprogrammer/')
   const Blog = link('Blog', 'https://conradtheprogrammer.medium.com')
@@ -59,4 +57,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default Page
