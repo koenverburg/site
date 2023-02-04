@@ -1,14 +1,23 @@
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true' || false
+const serverSettings = {}
 
-const prepareForDocker = {}
-if (isGithubActions) {
-  prepareForDocker.output = "standalone"
-}
+// Comment this out if you are running this on a custom domain 
+// const isGithubActions = process.env.GITHUB_ACTIONS === 'true' || false
+//
+// if (isGithubActions) {
+//   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
+//   // trim off `<owner>/`
+//
+//   serverSettings.basePath = `/${repo}`
+//   serverSettings.assetPrefix = `/${repo}/`
+//
+//   serverSettings.env = {
+//     isGithubActions,
+//     prefix: `/${repo}`,
+//   }
+// }
 
 const nextConfig = {
-  ...prepareForDocker,
-
-  experimental: { appDir: true },
+  output: 'standalone',
 
   reactStrictMode: true,
   swcMinify: true,
@@ -16,6 +25,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-};
 
-module.exports = nextConfig;
+  ...serverSettings,
+}
+
+module.exports = nextConfig
