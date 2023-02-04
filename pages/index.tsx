@@ -1,15 +1,19 @@
 import Image from 'next/image'
 import {Layout} from '../components/Layout'
 
-/* eslint-disable react/display-name */
-const link = (label: string, link: string) => () => {
+const link = (label: string, link: string) => (): JSX.Element => {
+  const loweredLabel = label.toLowerCase().replaceAll(' ', '-')
   return (
-    <a href={link} target="_blank" className="underline font-semibold text-orange-500" rel="noreferrer">{label}</a>
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer"
+      className={`underline font-semibold text-orange-500 umami--click--${loweredLabel}`}
+    >{label}</a>
   ) 
 }
-/* eslint-enable react/display-name */
 
-const Bold = (props) => {
+const Bold = (props: { children: React.ReactNode }) => {
   return <span className="font-semibold text-blue-500">{props.children}</span>
 }
 
