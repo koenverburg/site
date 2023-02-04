@@ -1,14 +1,15 @@
 import Image from 'next/image'
 import {Layout} from '../components/Layout'
 
+/* eslint-disable react/display-name */
 const link = (label: string, link: string) => (): JSX.Element => {
-  const loweredLabel = label.toLowerCase().replaceAll(' ', '-')
+  const eventname = label.toLowerCase().replaceAll('.', '-').replaceAll(' ', '-')
   return (
     <a
       href={link}
       target="_blank"
       rel="noreferrer"
-      className={`underline font-semibold text-orange-500 umami--click--${loweredLabel}`}
+      className={`underline font-semibold text-orange-500 umami--click--${eventname}`}
     >{label}</a>
   ) 
 }
