@@ -7,7 +7,7 @@ const { trackEvent } = Plausible({
   domain: 'conradtheprogrammer.com'
 });
 
-const handleClick = (label: string, url: string) => () => {
+const handleClick = (label: string, url: string) => () =>
   trackEvent(
     "click",
     {
@@ -19,9 +19,6 @@ const handleClick = (label: string, url: string) => () => {
       url,
     }
   );
-
-  window.open(url, "_blank");
-};
 
 /* eslint-disable react/display-name */
 const link = (label: string, link: string) => (): JSX.Element => {
