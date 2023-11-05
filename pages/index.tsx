@@ -3,7 +3,7 @@ import { Layout } from "../components/Layout";
 import Plausible from "plausible-tracker";
 
 const { trackEvent } = Plausible({
-  trackLocalhost: true,
+  trackLocalhost: false,
   domain: 'conradtheprogrammer.com'
 });
 
