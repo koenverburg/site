@@ -1,4 +1,4 @@
-name: docker
+name: docker(multi stage)
 
 on:
   workflow_dispatch:
@@ -10,8 +10,8 @@ env:
   TAG: ${{ github.run_number }}
   TOKEN: ${{ secrets.REGISTRY_TOKEN }}
   REGISTRY: ghcr.io
-  DOCKERFILE: dockerfile
-  IMAGE_NAME: koenverburg/template-nextjs/nextjs
+  DOCKERFILE: multi.dockerfile
+  IMAGE_NAME: koenverburg/template-nextjs/nextjs-multi
 
 jobs:
   build:

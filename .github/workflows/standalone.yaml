@@ -1,4 +1,4 @@
-name: docker
+name: docker(standalone)
 
 on:
   workflow_dispatch:
@@ -10,8 +10,8 @@ env:
   TAG: ${{ github.run_number }}
   TOKEN: ${{ secrets.REGISTRY_TOKEN }}
   REGISTRY: ghcr.io
-  DOCKERFILE: dockerfile
-  IMAGE_NAME: koenverburg/template-nextjs/nextjs
+  DOCKERFILE: standalone.dockerfile
+  IMAGE_NAME: koenverburg/template-nextjs/nextjs-standalone
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
           access_token: ${{ github.token }}
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -52,6 +52,45 @@ jobs:
           push: true
           file: ${{ env.DOCKERFILE }}
           context: .
-          platforms: linux/arm/v7, linux/amd64
+          platforms: linux/amd64
           # platforms: linux/arm/v7, linux/arm64,linux/amd86
           tags: ${{ steps.meta.outputs.tags }}
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Replace Environment Variables
+        uses: danielr1996/envsubst-action@1.0.0
+        env:
+          TAG: ${{ env.TAG }}
+        with:
+          input: k8s/temp-deployment.yaml
+          output: deployment.yaml
+
+      - name: Get Kubeconfig
+        uses: okteto/actions/namespace@v1
+        id: namespace
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+          namespace: koenverburg
+
+      - name: Deploy and Wait
+        uses: okteto/actions/deploy@v1
+        env:
+          KUBECONFIG: ${{ steps.namespace.outputs.kubeconfig }}
+        with:
+          namespace: koenverburg
+          manifest: deployment.yaml
+          # tag: "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}"
+          waitOn: deployment/nextjs
+
+      - name: Verify
+        uses: srt32/uptime@master
+        with:
+          url-to-hit: "https://nextjs-koenverburg.cloud.okteto.net"
+          expected-statuses: "200"
