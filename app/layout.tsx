@@ -11,9 +11,7 @@ export const fontSans = FontSans({
   variable: "--font-sans",
 })
 
-export const metadata: Metadata = {
-  title: 'Boilerplate'
-}
+export const metadata: Metadata = {}
 
 export default function RootLayout({
   // Layouts must accept a children prop.
