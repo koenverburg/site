@@ -8,8 +8,8 @@ export function Header() {
       <WordLogo />
       <div className="justify-items-end items-center">
         <ModeToggle/>
-        <span className="px-1"></span>
-        <Menu />
+        <span className="px-1"/>
+        {/* <Menu /> */}
       </div>
     </div>
   )
