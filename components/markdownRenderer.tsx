@@ -1,17 +1,39 @@
+"use client"
 import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import Plausible from "plausible-tracker";
 
 type MdxProps = {
   code: string
 }
 
+const { trackEvent } = Plausible({
+  trackLocalhost: false,
+  domain: 'conradtheprogrammer.com'
+});
+
+const handleClick = (label: string, url: string) => () =>
+  trackEvent(
+    "click",
+    {
+      props: {
+        url,
+        label,
+      },
+    },
+    {
+      url,
+    }
+  );
+
 // Consume all of https://ui.shadcn.com/docs/components/typography
 
 const CustomLink = (props) => {
   const href = props.href
+
   if (href.startsWith('/')) {
     return (
-      <Link className="font-medium text-primary underline underline-offset-4" href={href} {...props}>
+      <Link onClick={handleClick(props.children, href)} className="font-medium text-primary underline underline-offset-4" href={href} {...props}>
         {props.children}
       </Link>
     )
@@ -21,7 +43,7 @@ const CustomLink = (props) => {
     return <a className="font-medium text-primary underline underline-offset-4" {...props} />
   }
 
-  return <a className="font-medium text-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer" {...props} />
+  return <a onClick={handleClick(props.children, href)} className="font-medium text-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer" {...props} />
 }
 
 function H1(props) {
