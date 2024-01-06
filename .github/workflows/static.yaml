@@ -19,16 +19,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Installing node 18
+      - name: Installing node 20
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
-      - run: npm install
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
 
-      - run: npm run build
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - run: npm run export
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - run: pnpm build
+
+      - run: pnpm export
 
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v3
