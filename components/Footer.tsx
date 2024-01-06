@@ -6,9 +6,10 @@ export function Footer() {
         <p className="text-center text-sm leading-loose xtext-muted-foreground">
           Built with React and ❤️ in the Netherland
         </p>
-        <p className="text-center text-xs leading-loose text-muted-foreground">
-          Probably deployed faster then your enterprise app, let me teach you how you can do the same
-        </p>
+        {false &&<p className="text-center text-xs leading-loose text-muted-foreground">
+          Probably deployed faster then your enterprise app, let me teach you how you can do the same,
+          <a className="underline underline-offset-2" href="https://www.linkedin.com/in/koen-verburg-728920102/">write me a message here</a>
+        </p>}
       </div>
     </footer>
   )
