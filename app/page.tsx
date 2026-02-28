@@ -1,5 +1,6 @@
 import { RenderPageContent } from 'components/renderPageContent'
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 
 export const metadata: Metadata = {
   title: 'Koen Verburg - Conrad the Programmer',
