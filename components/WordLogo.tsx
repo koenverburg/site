@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 const words = ['Conrad The Programmer', 'Koen Verburg'];
 
 export function WordLogo() {
-  const ref = useRef()
+  const ref = useRef<HTMLElement>(null)
   const [count, setCount] = useState(0)
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState(words[0]);
@@ -31,8 +31,8 @@ export function WordLogo() {
         span.style.animationDelay = `${index * 0.008}s`
       })
     }
-    wrapLettersWithSpan(ref.current! as HTMLElement)
-    addAnimationDelay(ref.current! as HTMLElement)
+    wrapLettersWithSpan(ref.current as HTMLElement)
+    addAnimationDelay(ref.current as HTMLElement)
   }, [ref, currentWord]);
 
   useEffect(() => {
