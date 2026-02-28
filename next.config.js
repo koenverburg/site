@@ -1,8 +1,6 @@
 const path = require('path')
-const { withContentlayer } = require('next-contentlayer')
 
 const nextConfig = {
-  swcMinify: true,
   reactStrictMode: true,
 
   images: {
@@ -72,4 +70,4 @@ const securityHeaders = [
 ]
 
 
-module.exports = withContentlayer(nextConfig)
+module.exports = nextConfig

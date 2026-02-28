@@ -1,7 +1,15 @@
 "use client"
+import * as React from 'react'
+import { jsx, jsxs, Fragment } from 'react/jsx-runtime'
 import Link from 'next/link'
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import Plausible from "plausible-tracker";
+
+function useMDXComponent(code: string): React.ComponentType<any> {
+  return React.useMemo(() => {
+    const fn = new Function(code)
+    return fn({ Fragment, jsx, jsxs }).default
+  }, [code])
+}
 
 type MdxProps = {
   code: string

@@ -1,12 +1,12 @@
-import { allPages } from 'contentlayer/generated'
+import { Page } from '.velite'
 import { MarkdownRenderer } from './markdownRenderer'
 
 export function RenderPageContent({ title }: { title: string}) {
-  const page = allPages.find(p => p.title === title)
+  const page = Page.find(p => p.title === title)
 
   return (
     <main>
-      {page && <MarkdownRenderer code={page.body.code} />}
+      {page && <MarkdownRenderer code={page.body} />}
     </main>
   )
 }

@@ -1,0 +1,24 @@
+[
+  {
+    "title": "intro",
+    "headline": "",
+    "description": "Senior Software Engineer at Adidas, Entrepreneur, Day Trader, Create of Crypto Trading Bots and Signals",
+    "seoDescription": "Senior Software Engineer at Adidas, Entrepreneur, Day Trader, Create of Crypto Trading Bots and Signals",
+    "published": true,
+    "publishedAt": "2024-01-06T00:00:00.000Z",
+    "tags": [
+      "Tech",
+      "Portfolio",
+      "Senior Software Engineer",
+      "Adidas",
+      "Crypto",
+      "Crypto Trading",
+      "Crypto Bots",
+      "Crypto Signals",
+      "Software Engineering",
+      "Software Development"
+    ],
+    "slug": "intro.page",
+    "body": "const{Fragment:e,jsx:r,jsxs:n}=arguments[0];function _createMdxContent(t){const a={a:\"a\",h1:\"h1\",p:\"p\",span:\"span\",...t.components};return n(e,{children:[n(a.h1,{id:\"hi-im-koen\",children:[r(a.a,{className:\"anchor\",href:\"#hi-im-koen\",children:r(a.span,{className:\"icon icon-link\"})}),\"Hi, I'm Koen\"]}),\"\\n\",n(a.p,{children:[\"I'm a Senior Software Engineer, hacker and \",r(a.a,{href:\"https://github.com/neovim/neovim\",children:\"Neovim\"}),\" user. I currently work at \",r(a.a,{href:\"https://www.adidas-group.com/en/\",children:\"Adidas\"}),\",\\nhere I focus on Payment Experience for the global webshop, I also teach, speak and mentor Junior Engineers.\"]}),\"\\n\",n(a.p,{children:[\"From time to time I also like to \",r(a.a,{href:\"https://www.twitch.tv/conradtheprogrammer\",children:\"stream on twitch\"}),\" and I share my day to day over at \",r(a.a,{href:\"https://www.instagram.com/conradtheprogrammer\",children:\"instagram\"}),\".\\nAnd I also share tips and tricks on Neovim over at \",r(a.a,{href:\"https://www.youtube.com/@conradtheprogrammer\",children:\"Youtube\"}),\".\"]}),\"\\n\",n(a.p,{children:[\"Over on \",r(a.a,{href:\"https://twitter.com/koenverburg\",children:\"X/Twitter\"}),\" and \",r(a.a,{href:\"https://www.threads.net/@koenverburg_\",children:\"Threads\"}),\" I share my journey towards Saas Founder, Day Trader and Entrepreneur.\"]})]})}return{default:function(e={}){const{wrapper:n}=e.components||{};return n?r(n,{...e,children:r(_createMdxContent,{...e})}):_createMdxContent(e)}};"
+  }
+]
