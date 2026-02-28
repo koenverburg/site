@@ -30,7 +30,7 @@
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "sass": "^1.69.6",
-    "shiki": "^4.0.0",
+    "shiki": "^3.23.0",
     "tailwind-merge": "^3.5.0",
     "tailwindcss-animate": "^1.0.7"
   },
