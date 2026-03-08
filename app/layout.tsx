@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import './globals.css'
 import { Inter as FontSans } from "next/font/google"
-import { cn } from '@/lib/utils/cn'
+import { cn } from '@/lib/utils'
 import { Header } from '../components/Header'
 import { ThemeProvider } from '../components/theme-provider'
 import { Footer } from '../components/Footer'
