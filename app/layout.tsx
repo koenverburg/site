@@ -7,7 +7,7 @@ import { ThemeProvider } from '../components/theme-provider'
 import { Footer } from '../components/Footer'
 import Script from 'next/script'
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 })

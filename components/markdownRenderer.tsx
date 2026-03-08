@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Plausible from "plausible-tracker";
+import type { ComponentPropsWithoutRef } from 'react'
 
 type MdxProps = {
   code: string
@@ -28,35 +29,38 @@ const handleClick = (label: string, url: string) => () =>
 
 // Consume all of https://ui.shadcn.com/docs/components/typography
 
-const CustomLink = (props) => {
-  const href = props.href
+const CustomLink = ({ href, children, ...props }: ComponentPropsWithoutRef<'a'>) => {
+  if (!href) return <a {...props}>{children}</a>
 
   if (href.startsWith('/')) {
     return (
-      <Link onClick={handleClick(props.children, href)} className="font-medium text-primary underline underline-offset-4" href={href} {...props}>
-        {props.children}
+      <Link onClick={handleClick(String(children), href)} className="font-medium text-primary underline underline-offset-4" href={href} {...props}>
+        {children}
       </Link>
     )
   }
 
   if (href.startsWith('#')) {
-    return <a className="font-medium text-primary underline underline-offset-4" {...props} />
+    return <a className="font-medium text-primary underline underline-offset-4" href={href} {...props}>{children}</a>
   }
 
-  return <a onClick={handleClick(props.children, href)} className="font-medium text-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer" {...props} />
+  return <a onClick={handleClick(String(children), href)} className="font-medium text-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer" href={href} {...props}>{children}</a>
 }
 
-function H1(props) {
+function H1({ children }: ComponentPropsWithoutRef<'h1'>) {
+  // Skip the anchor element prepended by rehypeAutolinkHeadings (index 0)
+  const content = Array.isArray(children) ? children[1] : children;
   return (
     <h1 className="scroll-m-20 mb-4 text-4xl font-extrabold tracking-tight lg:text-3xl">
-      {props.children[1]}
+      {content}
     </h1>
   )
 }
-function P(props) {
+
+function P({ children }: ComponentPropsWithoutRef<'p'>) {
   return (
     <p className="leading-7 [&:not(:first-child)]:mt-6">
-      {props.children}
+      {children}
     </p>
   )
 }
