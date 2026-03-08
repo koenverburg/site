@@ -23,6 +23,7 @@
     "strictNullChecks": true,
     "paths": {
       "@/lib/components/ui/*": ["./lib/components/ui/*"],
+      "@/lib/utils": ["./lib/utils.ts"],
       "@/lib/utils/*": ["./lib/utils/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
