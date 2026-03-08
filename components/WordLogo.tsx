@@ -1,66 +1,50 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const words = ['Conrad The Programmer', 'Koen Verburg'];
+const MAX_CYCLES = 5;
 
 export function WordLogo() {
-  const ref = useRef()
-  const [count, setCount] = useState(0)
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentWord, setCurrentWord] = useState(words[0]);
+  const [displayWord, setDisplayWord] = useState(words[0]);
+  const [cycleCount, setCycleCount] = useState(0);
 
   useEffect(() => {
-    function wrapLettersWithSpan(node: HTMLElement) {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent) {
-        const text = node.textContent
-        const wrappedText = Array.from(text)
-          .map(letter => `<span>${letter}</span>`)
-          .join('')
-        const spanContainer = document.createElement('span')
-        spanContainer.innerHTML = wrappedText
-        node.replaceWith(spanContainer)
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        const childNodes = Array.from(node.childNodes)
-        childNodes.forEach(child => wrapLettersWithSpan(child as HTMLElement))
-      }
-    }
-    function addAnimationDelay(node: HTMLElement) {
-      node.querySelectorAll('span > span').forEach((span, index) => {
-        // @ts-ignore
-        span.style.animationDelay = `${index * 0.008}s`
-      })
-    }
-    wrapLettersWithSpan(ref.current! as HTMLElement)
-    addAnimationDelay(ref.current! as HTMLElement)
-  }, [ref, currentWord]);
+    if (cycleCount >= MAX_CYCLES) return;
 
-  useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex === 0 ? 1 : 0));
-    }, 5000); // Change words every 2 seconds
-
-    if (count === 5) {
-      clearInterval(intervalId);
-    }
+      setCurrentWordIndex((prev) => (prev === 0 ? 1 : 0));
+      setCycleCount((prev) => prev + 1);
+    }, 5000);
 
     return () => clearInterval(intervalId);
-  }, [count]);
+  }, [cycleCount]);
 
   useEffect(() => {
     const word = words[currentWordIndex];
-    const typingAnimationDuration = word.length * 50; // Adjust animation speed as needed
+    const typingDelay = word.length * 50;
 
-    setCurrentWord('');
-    setTimeout(() => {
-      setCurrentWord(word);
-    }, typingAnimationDuration);
+    setDisplayWord('');
+    const timeoutId = setTimeout(() => {
+      setDisplayWord(word);
+    }, typingDelay);
 
-    setCount(count + 1)
+    return () => clearTimeout(timeoutId);
   }, [currentWordIndex]);
 
   return (
-    // @ts-ignore
-    <a href="/"><h1 className="font-bold word-logo" ref={ref}>{currentWord}</h1></a>
-  )
+    <Link href="/">
+      <h1 className="font-bold word-logo">
+        <span>
+          {Array.from(displayWord).map((letter, index) => (
+            <span key={index} style={{ animationDelay: `${index * 0.008}s` }}>
+              {letter}
+            </span>
+          ))}
+        </span>
+      </h1>
+    </Link>
+  );
 }
