@@ -1,33 +1,50 @@
-import type { StackItem } from '@/lib/data/profile'
+import type { StackGroup } from '@/lib/data/profile'
+
+const kindLabel: Record<string, string> = {
+  frontend: 'fe',
+  backend:  'be',
+  both:     'fe · be',
+}
 
 type Props = {
   heading: string
-  items: StackItem[]
+  items: StackGroup[]
 }
 
 export function StackSection({ heading, items }: Props) {
   return (
-    <div className="mt-16">
+    <div>
       <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">
         {heading}
       </p>
-      <dl className="space-y-2">
-        {items.map((item) => (
-          <div key={item.label} className="flex gap-6">
-            <dt className="w-28 text-sm text-muted-foreground shrink-0">{item.label}</dt>
-            <dd className="text-sm text-foreground">
-              {item.href ? (
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium underline underline-offset-4"
-                >
-                  {item.name}
-                </a>
-              ) : (
-                item.name
-              )}
+      <dl className="space-y-3">
+        {items.map((group) => (
+          <div key={group.label} className="flex gap-6">
+            <dt className="w-28 text-sm text-muted-foreground shrink-0 pt-0.5">
+              {group.label}
+            </dt>
+            <dd className="flex flex-col gap-1">
+              {group.items.map((entry) => (
+                <div key={entry.name} className="flex items-baseline gap-2">
+                  {entry.href ? (
+                    <a
+                      href={entry.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-medium underline underline-offset-4"
+                    >
+                      {entry.name}
+                    </a>
+                  ) : (
+                    <span className="text-sm">{entry.name}</span>
+                  )}
+                  {entry.kind && (
+                    <span className="font-mono text-xs text-muted-foreground">
+                      {kindLabel[entry.kind]}
+                    </span>
+                  )}
+                </div>
+              ))}
             </dd>
           </div>
         ))}

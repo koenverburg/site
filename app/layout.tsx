@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils/cn'
 import { Header } from '../components/Header'
 import { ThemeProvider } from '../components/theme-provider'
 import { Footer } from '../components/Footer'
-import Script from 'next/script'
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,11 +26,6 @@ export default function RootLayout({
         "px-4 flex flex-col min-h-screen bg-background font-sans antialiased",
         fontSans.variable
       )}>
-        <Script
-          defer
-          data-domain="conradtheprogrammer.com"
-          src="https://plausible.io/js/script.js"
-        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -39,7 +33,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="flex-1 h-full flex flex-col justify-center">
+          <main className="flex-1 flex flex-col">
             {children}
           </main>
           <Footer />
