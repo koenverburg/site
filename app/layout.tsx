@@ -9,9 +9,19 @@ import { Footer } from '../components/Footer'
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 })
 
-export const metadata: Metadata = {}
+export const metadata: Metadata = {
+  description: 'Senior Software Engineer at Adidas, working on Payment Experience. Neovim user, hacker, and occasional streamer based in Amsterdam.',
+  metadataBase: new URL('https://www.koenverburg.nl'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.koenverburg.nl',
+    siteName: 'Koen Verburg',
+  },
+}
 
 export default function RootLayout({
   // Layouts must accept a children prop.
