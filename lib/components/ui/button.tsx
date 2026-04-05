@@ -33,7 +33,7 @@ const buttonVariants = cva('inline-flex items-center justify-center whitespace-n
     },
   },)
 
-export interface ButtonProps
+interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   VariantProps<typeof buttonVariants> {
   asChild?: boolean
@@ -53,4 +53,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({asChild = fals
 
 Button.displayName = 'Button'
 
-export {Button, buttonVariants}
+export {Button}

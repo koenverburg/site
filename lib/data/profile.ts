@@ -1,4 +1,4 @@
-export type ExperienceItem = {
+type ExperienceItem = {
   company:     string
   role:        string
   period:      string
