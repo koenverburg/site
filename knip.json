@@ -7,8 +7,7 @@
   ],
   "project": [
     "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
-    "lib/**/*.{ts,tsx}"
+    "components/**/*.{ts,tsx}"
   ],
   "ignoreDependencies": [
     "@tailwindcss/postcss",

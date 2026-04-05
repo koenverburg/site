@@ -1,11 +1,11 @@
 import {Metadata} from 'next'
 import {Inter as FontSans} from 'next/font/google'
 
-import {cn} from '@/lib/utils/cn'
+import {cn} from '@/components/cn.utils'
 
-import {Header} from '../components/Header'
-import {Footer} from '../components/Footer'
-import {ThemeProvider} from '../components/theme-provider'
+import {Header} from '@/components/header.component'
+import {Footer} from '@/components/footer.component'
+import {ThemeProvider} from '@/components/theme.provider'
 
 import './globals.css'
 

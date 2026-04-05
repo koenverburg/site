@@ -1,4 +1,4 @@
-import {experience} from '@/lib/data/profile'
+import {experience} from '@/components/profile.data'
 
 export function Experience() {
   return (

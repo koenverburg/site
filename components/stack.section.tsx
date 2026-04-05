@@ -1,4 +1,4 @@
-import type {StackGroup} from '@/lib/data/profile'
+import type {StackGroup} from '@/components/profile.data'
 
 const kindLabel: Record<string, string> = {
   backend:  'be',

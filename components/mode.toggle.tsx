@@ -3,7 +3,7 @@
 import {useTheme} from 'next-themes'
 import {MoonIcon, SunIcon} from '@radix-ui/react-icons'
 
-import {Button} from '@/lib/components/ui/button'
+import {Button} from '@/components/ui/button.component'
 
 export function ModeToggle() {
   const {resolvedTheme, setTheme} = useTheme()
