@@ -18,10 +18,8 @@ export default function Page() {
         <RenderPageContent title="intro" />
       </div>
       <Experience />
-      <div className="flex gap-16 mt-16">
-        <StackSection heading="dev environment" items={devStack} />
-        <StackSection heading="stack" items={langStack} />
-      </div>
+      <StackSection heading="dev environment" items={devStack} />
+      <StackSection heading="stack" items={langStack} />
     </section>
   )
 }

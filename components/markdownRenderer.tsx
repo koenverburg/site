@@ -56,6 +56,7 @@ const components = {
   p: P,
 }
 
+/* eslint-disable react-hooks/static-components */
 export function MarkdownRenderer({ code }: MdxProps) {
   const Component = useMDXComponent(code)
   return (
@@ -64,3 +65,4 @@ export function MarkdownRenderer({ code }: MdxProps) {
     </article>
   )
 }
+/* eslint-enable react-hooks/static-components */

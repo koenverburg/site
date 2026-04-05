@@ -13,7 +13,7 @@ type Props = {
 
 export function StackSection({ heading, items }: Props) {
   return (
-    <div>
+    <div className="mt-16">
       <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">
         {heading}
       </p>
