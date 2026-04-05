@@ -16,6 +16,7 @@ export const experience: ExperienceItem[] = [
   {
     company: 'Personal',
     description:
+      // eslint-disable-next-line @stylistic/max-len
       'Tinkering with Neovim configs and plugins, contributing to open-source projects, and building AI workflows and orchestration for Claude and Pi. Designing and building AI agents focused on automation and decision-making rather than code generation.',
     period: '2023 — Present',
     role:   'Open Source & AI Tinkerer',

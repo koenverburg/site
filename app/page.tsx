@@ -1,11 +1,10 @@
 import type {Metadata} from 'next'
 
-import {Experience} from '@/components/experience.component'
 import {StackSection} from '@/components/stack.section'
 import {ProfileHeader} from '@/components/profile.header'
-import {RenderPageContent} from '@/components/render.page.content'
-
+import {Experience} from '@/components/experience.component'
 import {devStack, langStack} from '@/components/profile.data'
+import {RenderPageContent} from '@/components/render.page.content'
 
 export const metadata: Metadata = {
   title: 'Koen Verburg',
