@@ -1,4 +1,4 @@
-import { experience } from '@/lib/data/profile'
+import {experience} from '@/lib/data/profile'
 
 export function Experience() {
   return (

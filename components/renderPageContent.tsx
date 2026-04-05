@@ -1,7 +1,8 @@
-import { Page } from '.velite'
-import { MarkdownRenderer } from './markdownRenderer'
+import {Page} from '.velite'
 
-export function RenderPageContent({ title }: { title: string}) {
+import {MarkdownRenderer} from './markdownRenderer'
+
+export function RenderPageContent({title}: {title: string}) {
   const page = Page.find(p => p.title === title)
 
   return (

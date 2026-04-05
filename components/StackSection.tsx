@@ -1,17 +1,17 @@
-import type { StackGroup } from '@/lib/data/profile'
+import type {StackGroup} from '@/lib/data/profile'
 
 const kindLabel: Record<string, string> = {
-  frontend: 'fe',
   backend:  'be',
   both:     'fe · be',
+  frontend: 'fe',
 }
 
 type Props = {
   heading: string
-  items: StackGroup[]
+  items:   StackGroup[]
 }
 
-export function StackSection({ heading, items }: Props) {
+export function StackSection({heading, items}: Props) {
   return (
     <div className="mt-16">
       <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">

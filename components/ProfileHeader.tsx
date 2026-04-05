@@ -1,9 +1,9 @@
 const links = [
-  { label: 'GitHub', href: 'https://github.com/koenverburg' },
-  { label: 'Twitter', href: 'https://twitter.com/koenverburg' },
-  { label: 'YouTube', href: 'https://youtube.com/@conradtheprogrammer' },
-  { label: 'Instagram', href: 'https://instagram.com/conradtheprogrammer' },
-  { label: 'Instagram (personal)', href: 'https://instagram.com/koenverburg' },
+  {href: 'https://github.com/koenverburg', label: 'GitHub'},
+  {href: 'https://twitter.com/koenverburg', label: 'Twitter'},
+  {href: 'https://youtube.com/@conradtheprogrammer', label: 'YouTube'},
+  {href: 'https://instagram.com/conradtheprogrammer', label: 'Instagram'},
+  {href: 'https://instagram.com/koenverburg', label: 'Instagram (personal)'},
 ]
 
 export function ProfileHeader() {

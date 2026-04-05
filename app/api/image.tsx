@@ -1,52 +1,50 @@
-import { ImageResponse } from '@vercel/og'
-import { NextRequest } from 'next/server'
+import {NextRequest} from 'next/server'
+import {ImageResponse} from '@vercel/og'
 
 export const config = {
   runtime: 'edge',
 }
 
 export default async function handler(req: NextRequest) {
-  const { searchParams } = req.nextUrl
+  const {searchParams} = req.nextUrl
   const postTitle = searchParams.get('title')
   const background = searchParams.get('background')
 
-  return new ImageResponse(
-    (
+  return new ImageResponse((
+    <div
+      style={{
+        alignItems:      'center',
+        backgroundColor: 'teal',
+        backgroundImage: `url(${process.env.APP_PROTOCOL}://${process.env.APP_URL}/${background})`,
+        display:         'flex',
+        flexDirection:   'column',
+        height:          '100%',
+        justifyContent:  'center',
+        width:           '100%'
+      }}
+    >
       <div
         style={{
-          height: '100%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'teal',
-          backgroundImage: `url(${process.env.APP_PROTOCOL}://${process.env.APP_URL}/${background})`
+          color:         'black',
+          // border: '1px solid red',
+          display:       'flex',
+          fontSize:      130,
+          fontStyle:     'normal',
+          letterSpacing: '-0.05em',
+          lineHeight:    '120px',
+          marginTop:     '11rem',
+          maxHeight:     '1500px',
+          textAlign:     'center',
+          width:         '800px',
+          // whiteSpace: 'pre-wrap',
         }}
       >
-        <div
-          style={{
-            marginTop: '11rem',
-            width: '800px',
-            maxHeight: '1500px',
-            textAlign: 'center',
-            // border: '1px solid red',
-            display: 'flex',
-            fontSize: 130,
-            letterSpacing: '-0.05em',
-            fontStyle: 'normal',
-            color: 'black',
-            lineHeight: '120px',
-            // whiteSpace: 'pre-wrap',
-          }}
-        >
-          {postTitle}
-        </div>
+        {postTitle}
       </div>
-    ),
-    {
-      height: 1920,
-      width: 1080,
-    }
-  )
+    </div>
+  ),
+  {
+    height: 1920,
+    width:  1080,
+  })
 }

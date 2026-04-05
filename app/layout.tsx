@@ -1,25 +1,28 @@
-import { Metadata } from 'next'
+import {Metadata} from 'next'
+import {Inter as FontSans} from 'next/font/google'
+
+import {cn} from '@/lib/utils/cn'
+
+import {Header} from '../components/Header'
+import {Footer} from '../components/Footer'
+import {ThemeProvider} from '../components/theme-provider'
+
 import './globals.css'
-import { Inter as FontSans } from "next/font/google"
-import { cn } from '@/lib/utils/cn'
-import { Header } from '../components/Header'
-import { ThemeProvider } from '../components/theme-provider'
-import { Footer } from '../components/Footer'
 
 const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
+  display:  'swap',
+  subsets:  ['latin'],
+  variable: '--font-sans',
 })
 
 export const metadata: Metadata = {
-  description: 'Senior Software Engineer at Adidas, working on Payment Experience. Neovim user, hacker, and occasional streamer based in Amsterdam.',
+  description:  'Senior Software Engineer at Adidas, working on Payment Experience. Neovim user, hacker, and occasional streamer based in Amsterdam.',
   metadataBase: new URL('https://www.koenverburg.nl'),
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://www.koenverburg.nl',
+  openGraph:    {
+    locale:   'en_US',
     siteName: 'Koen Verburg',
+    type:     'website',
+    url:      'https://www.koenverburg.nl',
   },
 }
 
@@ -32,10 +35,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body suppressHydrationWarning={true}  className={cn(
-        "px-4 flex flex-col min-h-screen bg-background font-sans antialiased",
-        fontSans.variable
-      )}>
+      <body suppressHydrationWarning={true}  className={cn('px-4 flex flex-col min-h-screen bg-background font-sans antialiased',
+        fontSans.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

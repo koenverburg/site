@@ -1,22 +1,22 @@
 export type ExperienceItem = {
-  company: string
-  role: string
-  period: string
+  company:     string
+  role:        string
+  period:      string
   description: string
 }
 
 export const experience: ExperienceItem[] = [
   {
     company: 'Adidas',
-    role: 'Senior Software Engineer',
-    period: '2021 — Present',
     description:
       'Part of the team that works on the Payment Experience for the global webshop. Mainly focusing on implementing new Payment Service Providers (PSPs) and setting update agentic workflows',
+    period: '2021 — Present',
+    role:   'Senior Software Engineer',
   },
 ]
 
 export type StackEntry = {
-  name: string
+  name:  string
   href?: string
   kind?: 'frontend' | 'backend' | 'both'
 }
@@ -28,66 +28,66 @@ export type StackGroup = {
 
 export const devStack: StackGroup[] = [
   {
+    items: [{href: 'https://ghostty.org', name: 'Ghostty'}],
     label: 'Terminal',
-    items: [{ name: 'Ghostty', href: 'https://ghostty.org' }],
   },
   {
+    items: [{href: 'https://zellij.dev', name: 'Zellij'}],
     label: 'Multiplexer',
-    items: [{ name: 'Zellij', href: 'https://zellij.dev' }],
   },
   {
+    items: [
+      {href: 'https://neovim.io', name: 'Neovim'},
+      {href: 'https://zed.dev', name: 'Zed'},
+    ],
     label: 'Editor',
-    items: [
-      { name: 'Neovim', href: 'https://neovim.io' },
-      { name: 'Zed', href: 'https://zed.dev' },
-    ],
   },
   {
+    items: [
+      {href: 'https://claude.ai/code', name: 'Claude Code CLI'},
+      {href: 'https://pi.dev', name: 'Pi'},
+    ],
     label: 'AI',
-    items: [
-      { name: 'Claude Code CLI', href: 'https://claude.ai/code' },
-      { name: 'Pi', href: 'https://pi.dev' },
-    ],
   },
   {
-    label: 'Infra',
     items: [
-      { name: 'Dagger', href: 'https://dagger.io' },
-      { name: 'Kubernetes', href: 'https://kubernetes.io' },
-      { name: 'k9s', href: 'https://k9scli.io' },
+      {href: 'https://dagger.io', name: 'Dagger'},
+      {href: 'https://kubernetes.io', name: 'Kubernetes'},
+      {href: 'https://k9scli.io', name: 'k9s'},
     ],
+    label: 'Infra',
   },
 ]
 
 export const langStack: StackGroup[] = [
   {
+    items: [
+      {kind: 'both', name: 'TypeScript'},
+      {kind: 'backend', name: 'Rust'},
+      {kind: 'backend', name: 'Go'},
+      {kind: 'backend', name: 'Lua'},
+    ],
     label: 'Language',
-    items: [
-      { name: 'TypeScript', kind: 'both' },
-      { name: 'Rust', kind: 'backend' },
-      { name: 'Go', kind: 'backend' },
-      { name: 'Lua', kind: 'backend' },
-    ],
   },
   {
+    items: [
+      {name: 'React'},
+      {name: 'Next.js'},
+    ],
     label: 'Frontend',
-    items: [
-      { name: 'React' },
-      { name: 'Next.js' },
-    ],
   },
   {
+    items: [
+      {name: 'Node.js'},
+      {name: 'Bun'},
+    ],
     label: 'Runtime',
-    items: [
-      { name: 'Node.js' },
-      { name: 'Bun' },
-    ],
   },
   {
-    label: 'Platform',
     items: [
-      { name: 'Kubernetes' },
-      { name: 'Dagger' },
+      {name: 'Kubernetes'},
+      {name: 'Dagger'},
     ],
+    label: 'Platform',
   },
 ]

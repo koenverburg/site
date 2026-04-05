@@ -1,21 +1,23 @@
-"use client"
-import * as React from 'react'
-import { jsx, jsxs, Fragment } from 'react/jsx-runtime'
-import Link from 'next/link'
-import type { ComponentPropsWithoutRef } from 'react'
+'use client'
+import type {ComponentPropsWithoutRef} from 'react'
 
-function useMDXComponent(code: string): React.ComponentType<any> {
-  return React.useMemo(() => {
-    const fn = new Function(code)
-    return fn({ Fragment, jsx, jsxs }).default
-  }, [code])
-}
+import Link from 'next/link'
+import * as React from 'react'
+import {Fragment, jsx, jsxs} from 'react/jsx-runtime'
 
 type MdxProps = {
   code: string
 }
 
-const CustomLink = ({ href, children, ...props }: ComponentPropsWithoutRef<'a'>) => {
+function useMDXComponent(code: string): React.ComponentType<any> {
+  return React.useMemo(() => {
+    const fn = new Function(code)
+
+    return fn({Fragment, jsx, jsxs}).default
+  }, [code])
+}
+
+const CustomLink = ({children, href, ...props}: ComponentPropsWithoutRef<'a'>) => {
   if (!href) return <a {...props}>{children}</a>
 
   if (href.startsWith('/')) {
@@ -33,8 +35,9 @@ const CustomLink = ({ href, children, ...props }: ComponentPropsWithoutRef<'a'>)
   return <a className="font-medium text-primary underline underline-offset-4" target="_blank" rel="noopener noreferrer" href={href} {...props}>{children}</a>
 }
 
-function H1({ children }: ComponentPropsWithoutRef<'h1'>) {
-  const content = Array.isArray(children) ? children[1] : children;
+function H1({children}: ComponentPropsWithoutRef<'h1'>) {
+  const content = Array.isArray(children) ? children[1] : children
+
   return (
     <h1 className="scroll-m-20 mb-4 text-4xl font-extrabold tracking-tight lg:text-3xl">
       {content}
@@ -42,7 +45,7 @@ function H1({ children }: ComponentPropsWithoutRef<'h1'>) {
   )
 }
 
-function P({ children }: ComponentPropsWithoutRef<'p'>) {
+function P({children}: ComponentPropsWithoutRef<'p'>) {
   return (
     <p className="leading-7 [&:not(:first-child)]:mt-6">
       {children}
@@ -51,17 +54,18 @@ function P({ children }: ComponentPropsWithoutRef<'p'>) {
 }
 
 const components = {
-  a: CustomLink,
+  a:  CustomLink,
   h1: H1,
-  p: P,
+  p:  P,
 }
 
 /* eslint-disable react-hooks/static-components */
-export function MarkdownRenderer({ code }: MdxProps) {
+export function MarkdownRenderer({code}: MdxProps) {
   const Component = useMDXComponent(code)
+
   return (
     <article className="prose prose-quoteless prose-neutral dark:prose-invert flex-col">
-      <Component components={{ ...components }} />
+      <Component components={{...components}} />
     </article>
   )
 }

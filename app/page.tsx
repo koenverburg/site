@@ -1,9 +1,11 @@
-import { RenderPageContent } from 'components/renderPageContent'
-import { ProfileHeader } from 'components/ProfileHeader'
-import { Experience } from 'components/Experience'
-import { StackSection } from 'components/StackSection'
-import { devStack, langStack } from '@/lib/data/profile'
-import type { Metadata } from 'next'
+import type {Metadata} from 'next'
+
+import {Experience} from 'components/Experience'
+import {StackSection} from 'components/StackSection'
+import {ProfileHeader} from 'components/ProfileHeader'
+import {RenderPageContent} from 'components/renderPageContent'
+
+import {devStack, langStack} from '@/lib/data/profile'
 
 export const metadata: Metadata = {
   title: 'Koen Verburg',
