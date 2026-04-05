@@ -32,6 +32,9 @@
       "@/lib/utils/*": [
         "./lib/utils/*"
       ],
+      "@/lib/data/*": [
+        "./lib/data/*"
+      ],
       "contentlayer/generated": [
         "./.contentlayer/generated"
       ]
