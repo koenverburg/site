@@ -13,6 +13,13 @@ export const experience: ExperienceItem[] = [
     period: '2021 — Present',
     role:   'Senior Software Engineer',
   },
+  {
+    company: 'Personal',
+    description:
+      'Tinkering with Neovim configs and plugins, contributing to open-source projects, and building AI workflows and orchestration for Claude and Pi. Designing and building AI agents focused on automation and decision-making rather than code generation.',
+    period: '2023 — Present',
+    role:   'Open Source & AI Tinkerer',
+  },
 ]
 
 export type StackEntry = {
