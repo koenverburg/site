@@ -11,7 +11,7 @@ export const experience: ExperienceItem[] = [
     role: 'Senior Software Engineer',
     period: '2021 — Present',
     description:
-      'Payment Experience for the global webshop. Implementing new Payment Service Providers (PSPs), Building using AI agents',
+      'Part of the team that works on the Payment Experience for the global webshop. Mainly focusing on implementing new Payment Service Providers (PSPs) and setting update agentic workflows',
   },
 ]
 
