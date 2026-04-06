@@ -9,7 +9,7 @@ export const experience: ExperienceItem[] = [
   {
     company: 'Adidas',
     description:
-      'Part of the team that works on the Payment Experience for the global webshop. Mainly focusing on implementing new Payment Service Providers (PSPs) and setting update agentic workflows',
+      'Part of the team that works on the Payment Experience for the global webshop. Mainly focusing on implementing new Payment Service Providers (PSPs). And setting up agentic workflows for faster turn-a-round.',
     period: '2021 — Present',
     role:   'Senior Software Engineer',
   },
