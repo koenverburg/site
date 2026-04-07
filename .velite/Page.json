@@ -15,6 +15,6 @@
       "Software Development"
     ],
     "slug": "intro.page",
-    "body": "const{jsx:e,jsxs:n}=arguments[0];function _createMdxContent(t){const r={a:\"a\",p:\"p\",...t.components};return n(r.p,{children:[\"I'm a \",e(r.a,{href:\"https://github.com/neovim/neovim\",children:\"Neovim\"}),\" user, hacker, and occasional \",e(r.a,{href:\"https://www.twitch.tv/conradtheprogrammer\",children:\"streamer\"}),\" working at the intersection of payments and platform engineering.\"]})}return{default:function(n={}){const{wrapper:t}=n.components||{};return t?e(t,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};"
+    "body": "const{jsx:e,jsxs:n}=arguments[0];function _createMdxContent(t){const r={a:\"a\",p:\"p\",...t.components};return n(r.p,{children:[\"I'm current working on Payment Experience at \",e(r.a,{href:\"https://adidas.com\",children:\"adidas\"}),\", I'm a \",e(r.a,{href:\"https://github.com/neovim/neovim\",children:\"Neovim\"}),\" user, hacker, and occasional \",e(r.a,{href:\"https://www.twitch.tv/conradtheprogrammer\",children:\"streamer\"}),\". And passionate about scalability, DevOps, and Platform Engineering.\"]})}return{default:function(n={}){const{wrapper:t}=n.components||{};return t?e(t,{...n,children:e(_createMdxContent,{...n})}):_createMdxContent(n)}};"
   }
 ]
