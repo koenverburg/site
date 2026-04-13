@@ -5,6 +5,19 @@ type ExperienceItem = {
   description: string
 }
 
+export type Project = {
+  name:        string
+  href:        string
+  description: string
+  tags:        string[]
+}
+
+export type ArchivedProject = {
+  name: string
+  href: string
+  year: string
+}
+
 export const experience: ExperienceItem[] = [
   {
     company: 'Adidas',
@@ -64,6 +77,45 @@ export const devStack: StackGroup[] = [
       {href: 'https://k9scli.io', name: 'k9s'},
     ],
     label: 'Infra',
+  },
+]
+
+export const activeProjects: Project[] = [
+  {
+    name:        'Pi Code Agent',
+    href:        'https://pi.dev',
+    description: 'An AI-powered coding assistant built for seamless development workflows.',
+    tags:        ['AI', 'TypeScript', 'Automation'],
+  },
+  {
+    name:        'Neovim Config',
+    href:        'https://github.com/koenverburg/nvim',
+    description: 'A highly optimized Neovim configuration focusing on speed and developer experience.',
+    tags:        ['Lua', 'Neovim', 'DX'],
+  },
+  {
+    name:        'AI Workflows',
+    href:        '#',
+    description: 'Orchestration and automation tools for Claude, Pi, and other AI agents.',
+    tags:        ['AI', 'TypeScript', 'Automation'],
+  },
+]
+
+export const archivedProjects: ArchivedProject[] = [
+  {
+    name: 'minimal-tmux',
+    href: 'https://github.com/koenverburg/minimal-tmux',
+    year: '2023',
+  },
+  {
+    name: 'peregrine',
+    href: 'https://github.com/koenverburg/peregrine',
+    year: '2022',
+  },
+  {
+    name: 'tuisky',
+    href: 'https://github.com/koenverburg/tuisky',
+    year: '2022',
   },
 ]
 

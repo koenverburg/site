@@ -5,6 +5,7 @@ import {ProfileHeader} from '@/components/profile.header'
 import {Experience} from '@/components/experience.component'
 import {devStack, langStack} from '@/components/profile.data'
 import {RenderPageContent} from '@/components/render.page.content'
+import {ActiveProjects} from '@/components/active-projects.component'
 
 export const metadata: Metadata = {
   title: 'Koen Verburg',
@@ -19,6 +20,7 @@ export default function Page() {
         <RenderPageContent title="intro" />
       </div>
       <Experience />
+      <ActiveProjects />
       <StackSection heading="dev environment" items={devStack} />
       <StackSection heading="stack" items={langStack} />
     </section>
