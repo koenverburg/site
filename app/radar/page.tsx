@@ -1,7 +1,5 @@
 import type {Metadata} from 'next'
 
-import {StackSection} from '@/components/stack.section'
-import {devStack, langStack} from '@/components/profile.data'
 import {RadarChart} from '@/components/radar/radar-chart.component'
 
 export const metadata: Metadata = {
@@ -19,8 +17,6 @@ export default function RadarPage() {
         </p>
       </div>
       <RadarChart />
-      <StackSection heading="dev environment" items={devStack} />
-      <StackSection heading="stack" items={langStack} />
     </section>
   )
 }
