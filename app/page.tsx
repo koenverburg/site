@@ -1,9 +1,7 @@
 import type {Metadata} from 'next'
 
-import {StackSection} from '@/components/stack.section'
 import {ProfileHeader} from '@/components/profile.header'
 import {Experience} from '@/components/experience.component'
-import {devStack, langStack} from '@/components/profile.data'
 import {RenderPageContent} from '@/components/render.page.content'
 import {ActiveProjects} from '@/components/active-projects.component'
 
@@ -21,8 +19,6 @@ export default function Page() {
       </div>
       <Experience />
       <ActiveProjects />
-      <StackSection heading="dev environment" items={devStack} />
-      <StackSection heading="stack" items={langStack} />
     </section>
   )
 }
