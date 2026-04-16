@@ -41,7 +41,7 @@ export const activeProjects: Project[] = [
   {
     name:        'Setting up agentic workflows',
     href:        'https://pi.dev',
-    description: 'An AI-powered coding assistant built for seamless development workflows.',
+    description: 'Setting up agentic workflows with human-in-the-loop, as well as fully autonomous coding agents running with hosted and local models',
     tags:        ['AI', 'TypeScript', 'Automation'],
   },
   {
@@ -75,4 +75,3 @@ export const archivedProjects: ArchivedProject[] = [
     year: '2022',
   },
 ]
-
