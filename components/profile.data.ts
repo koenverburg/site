@@ -39,7 +39,7 @@ export const experience: ExperienceItem[] = [
 
 export const activeProjects: Project[] = [
   {
-    name:        'Pi Code Agent',
+    name:        'Setting up agentic workflows',
     href:        'https://pi.dev',
     description: 'An AI-powered coding assistant built for seamless development workflows.',
     tags:        ['AI', 'TypeScript', 'Automation'],
