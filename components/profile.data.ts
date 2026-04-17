@@ -39,9 +39,15 @@ export const experience: ExperienceItem[] = [
 
 export const activeProjects: Project[] = [
   {
-    name:        'Agentic Workflows / Autonomous Coding',
+    name:        'Agentic Workflows / Autonomous Coding - HomeLab',
     href:        'https://pi.dev',
     description: 'Setting up agentic workflows with human-in-the-loop, as well as fully autonomous coding agents running with hosted and local models',
+    tags:        ['AI', 'TypeScript', 'Automation'],
+  },
+  {
+    name:        'AI Workflows - CLI Tooling',
+    href:        '#',
+    description: 'Orchestration and automation tools for Claude, Pi, and other AI agents.',
     tags:        ['AI', 'TypeScript', 'Automation'],
   },
   {
@@ -49,12 +55,6 @@ export const activeProjects: Project[] = [
     href:        'https://github.com/koenverburg/nvim',
     description: 'A highly optimized Neovim configuration focusing on speed and developer experience.',
     tags:        ['Lua', 'Neovim', 'DX'],
-  },
-  {
-    name:        'AI Workflows',
-    href:        '#',
-    description: 'Orchestration and automation tools for Claude, Pi, and other AI agents.',
-    tags:        ['AI', 'TypeScript', 'Automation'],
   },
 ]
 
