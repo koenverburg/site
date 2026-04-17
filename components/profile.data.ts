@@ -39,7 +39,7 @@ export const experience: ExperienceItem[] = [
 
 export const activeProjects: Project[] = [
   {
-    name:        'Setting up agentic workflows',
+    name:        'Agentic Workflows / Autonomous Coding',
     href:        'https://pi.dev',
     description: 'Setting up agentic workflows with human-in-the-loop, as well as fully autonomous coding agents running with hosted and local models',
     tags:        ['AI', 'TypeScript', 'Automation'],
