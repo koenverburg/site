@@ -6,6 +6,7 @@
     "build": "velite build && next build",
     "start": "next start",
     "export": "next export -o dist",
+    "test": "tsc --noEmit",
     "type-check": "tsc",
     "knip": "knip",
     "lint": "eslint ."
